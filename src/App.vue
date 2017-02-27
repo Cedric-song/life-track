@@ -41,4 +41,8 @@ footer {
   position: absolute;
   bottom: 0;
 }
+
+#app {
+  height: 100%;
+}
 </style>
