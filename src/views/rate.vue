@@ -1,7 +1,7 @@
 <template>
 <div class="main">
   <app-header title="RATE DATA"></app-header>
-  <p>rate</p>
+  <div class="content"> </div>
 </div>
 </template>
 

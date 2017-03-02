@@ -3,7 +3,6 @@
   <i class="iconfont" :class="iconClass"></i>
   <span class="tab-label" v-text="label"></span>
 </router-link>
-
 </template>
 <script>
 export default {
@@ -18,7 +17,6 @@ export default {
     }
   }
 }
-
 </script>
 
 <style scoped>
@@ -28,6 +26,10 @@ export default {
   flex-direction: column;
   justify-content: center;
   color: #aaa;
+}
+
+.tab-item.active {
+  color: #ed8e07;
 }
 
 .tab-item i,
@@ -47,5 +49,4 @@ export default {
   background-color: #333;
   color: #fff;
 }
-
 </style>

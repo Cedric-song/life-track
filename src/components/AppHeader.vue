@@ -23,5 +23,7 @@ header {
   line-height: 55px;
   color: #fff;
   font-size: 18px;
+  position: fixed;
+  top: 0;
 }
 </style>
