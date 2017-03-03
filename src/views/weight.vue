@@ -8,70 +8,12 @@
       <span>0.1KG</span>
     </div>
     <div class="overview">
-      <div class="row row-1">
-        <span class="hd">MAX WEIGHT</span>
-        <span>80.1KG</span>
-        <span>2017-10-10</span>
-      </div>
-      <div class="row">
-        <span class="hd">MAX WEIGHT</span>
-        <span>80.1KG</span>
-        <span>2017-10-10</span>
-      </div>
+      <Chunk v-for="(view,index) in overview" :title="view.title" :date="view.date" :weight="view.weight" :index="index"></Chunk>
     </div>
     <div class="list">
-      <ul>
-        <li class="li">
-          <span>1</span>
-          <span>2017-1-1</span>
-          <span>80KG</span>
-        </li>
-        <li class="li">
-          <span>1</span>
-          <span>2017-1-1</span>
-          <span>80KG</span>
-        </li>
-        <li class="li">
-          <span>1</span>
-          <span>2017-1-1</span>
-          <span>80KG</span>
-        </li>
-        <li class="li">
-          <span>1</span>
-          <span>2017-1-1</span>
-          <span>80KG</span>
-        </li>
-        <li class="li">
-          <span>1</span>
-          <span>2017-1-1</span>
-          <span>80KG</span>
-        </li>
-        <li class="li">
-          <span>1</span>
-          <span>2017-1-1</span>
-          <span>80KG</span>
-        </li>
-        <li class="li">
-          <span>1</span>
-          <span>2017-1-1</span>
-          <span>80KG</span>
-        </li>
-        <li class="li">
-          <span>1</span>
-          <span>2017-1-1</span>
-          <span>80KG</span>
-        </li>
-        <li class="li">
-          <span>1</span>
-          <span>2017-1-1</span>
-          <span>80KG</span>
-        </li>
-        <li class="li">
-          <span>1</span>
-          <span>2017-1-1</span>
-          <span>80KG</span>
-        </li>
-      </ul>
+      <List v-for="item in list">
+        <ListItem :index="item.index" :date="item.date" :weight="item.weight"></ListItem>
+      </List>
     </div>
   </div>
 </div>
@@ -79,9 +21,34 @@
 
 <script>
 import AppHeader from 'components/AppHeader'
+import List from 'components/List'
+import ListItem from 'components/List-item'
+import Chunk from 'components/Chunk'
+import createList from '../assets/test-js/data.js'
+// create test list data
 export default {
   components: {
-    AppHeader
+    AppHeader,
+    List,
+    ListItem,
+    Chunk
+  },
+  data() {
+    return {
+      list: createList(),
+      overview: [
+        {
+          title: 'MIN WEIGHT',
+          date: '2017-01-01',
+          weight: '80KG'
+        },
+        {
+          title: 'MAX WEIGHT',
+          date: '2017-01-01',
+          weight: '90KG'
+        }
+      ]
+    }
   }
 }
 </script>
@@ -119,36 +86,5 @@ export default {
   border-right: 0;
   border-left: 0;
   box-sizing: border-box;
-}
-
-.overview .row {
-  flex-grow: 1;
-  font-size: 22px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.row-1 {
-  border-right: 2px solid #d7d7d7;
-}
-
-.row span {
-  display: block;
-  padding-top: 10px;
-}
-
-.list .li {
-  display: flex;
-  border-bottom: 2px solid #d7d7d7;
-  text-align: center;
-}
-
-.li span {
-  flex: 2;
-}
-
-.li span:first-child {
-  flex: 1;
 }
 </style>

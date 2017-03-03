@@ -1,6 +1,6 @@
 <template>
 <div class="main">
-  <app-header title="RATE DATA"></app-header>
+  <app-header title="COST DATA"></app-header>
   <div class="content"> </div>
 </div>
 </template>

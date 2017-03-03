@@ -48,6 +48,7 @@
 import AppHeader from 'components/AppHeader'
 import TMAP from 'TMAP'
 export default {
+  name: 'home',
   components: {
     AppHeader
   },

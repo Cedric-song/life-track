@@ -4,7 +4,7 @@
     <bars>
       <bar path="/home" label="HOME" icon="home"></bar>
       <bar path="/weight" label="WEIGHT" icon="weight"></bar>
-      <bar path="/rate" label="RATE" icon="rate"></bar>
+      <bar path="/cost" label="COST" icon="rate"></bar>
     </bars>
   </footer>
   <transition name="fade" mode="out-in">

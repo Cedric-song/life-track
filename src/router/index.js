@@ -5,7 +5,7 @@ Vue.use(Router)
 
 import NotFoundComponent from 'views/NotFoundComponent'
 import Home from 'views/home'
-import Rate from 'views/rate'
+import Cost from 'views/cost'
 import Weight from 'views/weight'
 
 export default new Router({
@@ -14,8 +14,8 @@ export default new Router({
     path: '/home',
     component: Home
   }, {
-    path: '/rate',
-    component: Rate
+    path: '/cost',
+    component: Cost
   }, {
     path: '/weight',
     component: Weight
