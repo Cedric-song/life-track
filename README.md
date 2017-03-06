@@ -2,6 +2,16 @@
 
 > A Vue.js project
 
+## Introduction
+
+`life track` is a personal life app based on [vue.js](http://vuejs.org/).It contains vue component and third-party web api including "yahoo api&&tencent api".Features include:
+
+- Vue-router
+- Vuex
+- Vue-resource
+- yahoo finance api
+- tencent geolocation api
+
 ## Build Setup
 
 ``` bash
@@ -17,5 +27,3 @@ npm run build
 # build for production and view the bundle analyzer report
 npm run build --report
 ```
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
