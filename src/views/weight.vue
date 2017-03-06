@@ -12,7 +12,7 @@
     </div>
     <div class="list">
       <List v-for="item in list">
-        <ListItem :index="item.index" :date="item.date" :weight="item.weight"></ListItem>
+        <ListItem :index="item.index" :date="item.date" :value="item.value"></ListItem>
       </List>
     </div>
   </div>

@@ -2,7 +2,7 @@
 <li class="li">
   <span v-text="index"></span>
   <span v-text="date"></span>
-  <span v-text="weight"></span>
+  <span v-text="value"></span>
 </li>
 </template>
 
@@ -11,7 +11,7 @@ export default {
   props: {
     index: '',
     date: '',
-    weight: ''
+    value: ''
   }
 }
 </script>

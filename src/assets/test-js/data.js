@@ -1,10 +1,10 @@
-function createList() {
+function createList(type = 'weight') {
   let arr = []
   for (let i = 0; i < 50; i++) {
     arr.push({
       index: i.toString(),
       date: createDate(),
-      weight: (80 - i / 10) + 'KG'
+      value: type === 'cost' ? ~~(20 + i * 0.5) + '元' : (80 - i / 10) + 'KG'
     })
   }
   return arr

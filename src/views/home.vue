@@ -16,7 +16,17 @@
           <span class="num">{{item.value}}</span>
         </div>
       </div>
-      <div class="time"> </div>
+      <div v-if="!recordCost" class="cost">
+        <span>MY COST</span>
+        <span class="user-weight">
+          <input v-model="cost" type="text" name="cost" @blur="saveValue" maxlength="5" autofocus>
+          <b>元</b>
+        </span>
+      </div>
+      <div v-else class="cost">
+        <span class="">MY COST</span>
+        <span class="user-cost" @click="showInput('recordCost')">{{ cost }}元</span>
+      </div>
     </div>
     <div class="row wr">
       <div v-if="!recordWeight" class="weight">
@@ -28,7 +38,7 @@
       </div>
       <div v-else class="weight">
         <span class="">MY WEIGHT</span>
-        <span class="user-weight" @click="showInput">{{ weight }}KG</span>
+        <span class="user-weight" @click="showInput('recordWeight')">{{ weight }}KG</span>
       </div>
       <div class="cl rate">
         <div>
@@ -56,6 +66,8 @@ export default {
     return {
       recordWeight: false,
       weight: '0.0',
+      recordCost: false,
+      cost: '0.0',
       position: '',
       rate: [],
       weather: []
@@ -66,12 +78,12 @@ export default {
   },
   methods: {
     saveValue() {
-      if (Number.parseFloat(this.$data.weight) !== 0) {
-        this.$data.recordWeight = true
+      if (~~this.$data[event.target.name] !== 0) {
+        this.$data['record' + event.target.name[0].toUpperCase() + event.target.name.slice(1)] = true
       }
     },
-    showInput() {
-      this.$data.recordWeight = false
+    showInput(name) {
+      this.$data[name] = false
     },
     fetchData() {
       let that = this
@@ -147,7 +159,7 @@ export default {
 }
 
 .weight,
-.time {
+.cost {
   flex: 3;
   font-size: 22px;
   display: flex;
@@ -171,12 +183,14 @@ export default {
   box-sizing: border-box;
 }
 
-.user-weight {
+.user-weight,
+.user-cost {
   font-size: 30px;
   padding-top: 10px;
 }
 
-.user-weight input {
+.user-weight input,
+.user-cost input {
   width: 80px;
   height: 30px;
   border: 0;
